@@ -77,7 +77,8 @@
                 <div class='row'>
                   <div class='col-md-4'>"
                       . $task->getTask() .
-                      "</div> <!-- .col-md-4 -->
+                      "<br><a href='/'>See All Tasks</a>
+                      </div> <!-- .col-md-4 -->
                     </div> <!-- .row -->
                   </div> <!-- .container -->
                 </body>
