@@ -44,8 +44,11 @@
                         <input type='text' name='task' id='task' class='form-control' placeholder='Personal Slave'>
                       </div>
 
-                      <button type='submit' class='btn btn-lg btn-info'>Submit Job</button>
+                      <button type='submit' class='btn btn-lg btn-info'>Submit Task</button>
+                    </form>
 
+                    <br><form action='/' method='post'>
+                      <button type='submit' class='btn'>Delete All Tasks</button>
                     </form>
 
                   </div> <!-- .col-md-4 -->
@@ -84,6 +87,44 @@
                 </body>
               </html>
               ";
+    });
+
+    $app->post('/', function() {
+        Tasks::deleteAll();
+
+        return "
+          <!DOCTYPE html>
+          <html>
+            <head>
+              <meta charset='utf-8'>
+              <title>Tasks: To Do List</title>
+              <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
+            </head>
+
+            <body>
+              <div class='container'>
+                <h1>Tasks: To Do List</h1>
+                <div class='row'>
+                  <div class='col-md-4'>
+                  <form action='/tasks' method='post'>
+                    <div class='form-group'>
+                      <label for='task'>Enter task you need done</label>
+                      <input type='text' name='task' id='task' class='form-control' placeholder='Personal Slave'>
+                    </div>
+
+                    <button type='submit' class='btn btn-lg btn-info'>Submit Task</button>
+                  </form>
+
+                  <br><form action='/' method='post'>
+                    <button type='submit' class='btn'>Delete All Tasks</button>
+                  </form>
+
+                  </div> <!-- .col-md-4 -->
+                  </div> <!-- .row -->
+                  </div> <!-- .container -->
+                  </body>
+                  </html>
+                  ";
     });
 
 

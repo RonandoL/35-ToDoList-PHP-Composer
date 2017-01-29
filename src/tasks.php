@@ -30,5 +30,11 @@
             return $_SESSION['array_of_tasks'];
         }
 
+        // DELETE TASKS EMPTY ARRAY
+        static function deleteAll()
+        {
+            $_SESSION['array_of_tasks'] = array();
+        }
+
     }
 ?>
